@@ -1,4 +1,5 @@
 {
+    "name": "shoppingfeed/coding-style-php",
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.3"
     }
