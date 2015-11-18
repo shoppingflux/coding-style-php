@@ -1,13 +1,12 @@
 <project name="${project.name}" description="Quality assurance related tasks">
 
     <property name="standard.phpcs" value="${project.basedir}/vendor/shoppingfeed/coding-style-php/phpcs/ruleset.xml"/>
-    <property name="standard.md" value="${project.basedir}/vendor/shoppingfeed/coding-style-php/phpmd/phpmd.xml"/>
-    <property name="exec.phpmd" value="${project.basedir}/vendor/bin/phpmd"/>
-    <property name="exec.phpcs" value="${project.basedir}/vendor/bin/phpcs"/>
-    <property name="exec.phpcbf" value="${project.basedir}/vendor/bin/phpcbf"/>
-    <property name="dir.build" value="${project.basedir}/build"/>
-    <property name="dir.report.qa" value="${dir.build}/quality-insurance"/>
-    <property name="dir.source" value="${dir.build}/quality-insurance"/>
+    <property name="standard.md"    value="${project.basedir}/vendor/shoppingfeed/coding-style-php/phpmd/phpmd.xml"/>
+    <property name="exec.phpmd"     value="${project.basedir}/vendor/bin/phpmd"/>
+    <property name="exec.phpcs"     value="${project.basedir}/vendor/bin/phpcs"/>
+    <property name="exec.phpcbf"    value="${project.basedir}/vendor/bin/phpcbf"/>
+    <property name="dir.build"      value="${project.basedir}/build"/>
+    <property name="dir.report.qa"  value="${dir.build}/quality-insurance"/>
 
     <target name="qa" description="Quality assurance check" depends="qa:phpcs, qa:phpmd"/>
 
@@ -23,7 +22,7 @@
         </exec>
     </target>
 
-    <target name="qa:phpcs" description="Find coding standard violations using PHP_CodeSniffer and log result in XML format" depends="qa:prepare">
+    <target name="qa:phpcs" description="Find coding standard violations using PHP_CodeSniffer" depends="qa:prepare">
         <exec executable="${exec.phpcs}" checkreturn="true" passthru="true">
             <arg value="--report=summary"/>
             <arg value="--standard=${standard.phpcs}"/>
@@ -34,7 +33,7 @@
         </exec>
     </target>
 
-    <target name="qa:fix-phpcs" description="Automatically Fix coding standard violations using PHP_CodeSniffer" depends="qa:prepare">
+    <target name="qa:fix-phpcs" description="Automatically Fix coding standard violations" depends="qa:prepare">
         <exec executable="${exec.phpcbf}" checkreturn="true" passthru="true">
             <arg path="${project.basedir}/src"/>
             <arg value="--standard=${standard.phpcs}"/>
