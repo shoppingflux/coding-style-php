@@ -1,5 +1,7 @@
 # PHP Coding Style
 
+Generator can be found here: http://edorian.github.io/php-coding-standard-generator/#phpmd
+
 ### PHP_CodeSniffer
 
 documentation: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options
