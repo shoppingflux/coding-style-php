@@ -2,8 +2,6 @@
     "name": "shoppingfeed/coding-style-php",
     "require": {
         "squizlabs/php_codesniffer": "^2.3",
-        "phpmd/phpmd": "^2.3",
-        "wimg/php-compatibility": "^5.6",
-        "simplyadmire/composer-plugins" : "@dev"
+        "phpmd/phpmd": "^2.3"
     }
 }
