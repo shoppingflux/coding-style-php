@@ -7,6 +7,7 @@
     <property name="exec.phpcbf"    value="${project.basedir}/vendor/bin/phpcbf"/>
     <property name="dir.build"      value="${project.basedir}/build"/>
     <property name="dir.report.qa"  value="${dir.build}/quality-insurance"/>
+    <property name="phpcs.symlink"  value="${project.basedir}/phpcs.xml"/>
 
     <target name="qa" description="Quality assurance check" depends="qa:phpcs, qa:phpmd"/>
 
@@ -40,8 +41,13 @@
         </exec>
     </target>
 
-    <target name="qa:prepare">
+ <target name="qa:prepare">
         <mkdir dir="${dir.report.qa}" mode="777"/>
+        <exec executable="ln" checkreturn="false" passthru="true">
+            <arg value="-sf"/>
+            <arg value="${standard.phpcs}"/>
+            <arg value="${phpcs.symlink}"/>
+        </exec>
     </target>
 
 </project>
