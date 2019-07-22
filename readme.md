@@ -1,31 +1,33 @@
-# PHP Coding Style
+# ShoppingFeed PHP Coding Style
 
-Generator can be found here: http://edorian.github.io/php-coding-standard-generator/#phpmd
+Run CS check and fixer against ShoppingFeed coding standards
 
-### PHP_CodeSniffer
+### Installation
 
-documentation: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options
+```
+composer require shoppingfed/coding-style-php
+```
 
+### Usage
 
-### Phing Integration
+Simply run [phpcs](https://github.com/squizlabs/PHP_CodeSniffer) validation (very verbose mode required to follow progression)
 
-Copy the necessary files located in directory `phing`, then tweak them according the project needs
+```
+vendor/bin/sfcs src --progress -vvv
+```
 
+Alternatively, you can run [phpcbs](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically) which will fix CS errors before validating the source files
 
-### PHPStorm integration
+```
+vendor/bin/sfcs src --autofix --progress -vvv
+```
 
+### Rules
 
-Editor -> inspections -> PHP -> PHP CodeSniffer Validation
+ShoppingFeed rules file is located at [phpcs/ruleset.xml]
 
-    - activate if necessary
-    - Coding Standard: Custom
-    - Select vendor/shoppingfeed/coding-style-php/phpcs as root directory
-    - Apply
-    
-    
-Editor -> inspections -> PHP -> PHP Mess Detector validation
+To run validation against a other set of rules, specify the standard
 
-    - activate if necessary
-    - Coding Standard: custom
-    - Custom rulset: select vendor/shoppingfeed/coding-style-php/phpmd/phpmd.xml
-    - Apply
+```
+vendor/bin/sfcs src --standard=PSR2
+```

@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+namespace ShoppingFeed\CodeStyle;
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+use ShoppingFeed\CodeStyle\Console\PHPCSCommand;
+use Symfony\Component\Console\Application;
+
+(function() {
+    $app = new Application('SFCS');
+    $app->add(new PHPCSCommand());
+    $app->setDefaultCommand('sfcs', true);
+    $app->run();
+})();
