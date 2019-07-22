@@ -2,7 +2,25 @@
 <?php
 namespace ShoppingFeed\CodeStyle;
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+// Find composer...
+(function($parents){
+    $dir    = dirname(__DIR__);
+    $found  = false;
+    while ($parents--) {
+        if (file_exists($dir . '/vendor/autoload.php')) {
+            require $dir . '/vendor/autoload.php';
+            $found = true;
+            break;
+        }
+        $dir = dirname($dir);
+    }
+
+    if (false === $found) {
+        echo 'Cannot find composer autoload file, aborting' . PHP_EOL;
+        exit(1);
+    }
+})(5);
+
 
 use ShoppingFeed\CodeStyle\Console\PHPCSCommand;
 use Symfony\Component\Console\Application;
