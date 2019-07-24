@@ -20,8 +20,8 @@ class PHPCSCommand extends Command
         );
         $this->addArgument(
             'source',
-            InputArgument::REQUIRED,
-            'The source folder to analyse'
+            InputArgument::REQUIRED | InputArgument::IS_ARRAY,
+            'The source(s) folder(s) to analyse, multiples values allowed'
         );
         $this->addOption(
             'standard',
@@ -36,6 +36,12 @@ class PHPCSCommand extends Command
             InputOption::VALUE_REQUIRED,
             'How many process can run simultaneously',
             1
+        );
+        $this->addOption(
+            'ignore',
+            null,
+            InputOption::VALUE_REQUIRED,
+            'Determine paths to exclude when checking'
         );
         $this->addOption(
             'progress',
@@ -60,8 +66,10 @@ class PHPCSCommand extends Command
             '--report=full',
             '--colors',
             '--parallel=' . $input->getOption('parallel'),
-            $input->getArgument('source')
+            '--ignore=' . $input->getOption('ignore')
         ];
+
+        array_push($options, ...$input->getArgument('source'));
 
         if ($input->getOption('progress')) {
             $options[] = '-p';
