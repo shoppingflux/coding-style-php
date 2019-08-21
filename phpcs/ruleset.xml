@@ -78,6 +78,7 @@
     <rule ref="Squiz.Arrays.ArrayDeclaration">
         <include name="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast" />
         <include name="Squiz.Arrays.ArrayDeclaration.CommaAfterLast" />
+        <include name="Squiz.Arrays.ArrayDeclaration.FirstValueNoNewline" />
         <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNoNewline" />
         <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned" />
         <exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed" />
