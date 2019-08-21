@@ -82,6 +82,10 @@ class PHPCSCommand extends Command
         }
 
         array_unshift($options, 'vendor/bin/phpcs');
-        $helper->run($output, $options, null, null, OutputInterface::VERBOSITY_NORMAL);
+
+        // forward the process exit code to the current command execution
+        return $helper
+            ->run($output, $options, null, null, OutputInterface::VERBOSITY_NORMAL)
+            ->getExitCode();
     }
 }
