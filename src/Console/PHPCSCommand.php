@@ -10,7 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class PHPCSCommand extends Command
 {
-    protected function configure(): void
+    protected function configure()
     {
         $this->setName(
             'sfcs'
@@ -28,7 +28,7 @@ class PHPCSCommand extends Command
             null,
             InputOption::VALUE_REQUIRED,
             'The standard file to apply',
-            dirname(__DIR__, 2) . '/phpcs/ruleset.xml'
+            dirname(dirname(__DIR__)) . '/phpcs/ruleset.xml'
         );
         $this->addOption(
             'parallel',
