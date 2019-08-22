@@ -3,7 +3,7 @@
 namespace ShoppingFeed\CodeStyle;
 
 // Find composer...
-(function($parents){
+call_user_func(function($parents){
     $dir    = dirname(__DIR__);
     $found  = false;
     while ($parents--) {
@@ -19,15 +19,15 @@ namespace ShoppingFeed\CodeStyle;
         echo 'Cannot find composer autoload file, aborting' . PHP_EOL;
         exit(1);
     }
-})(5);
+}, 5);
 
 
 use ShoppingFeed\CodeStyle\Console\PHPCSCommand;
 use Symfony\Component\Console\Application;
 
-(function() {
+call_user_func(function() {
     $app = new Application('SFCS');
     $app->add(new PHPCSCommand());
     $app->setDefaultCommand('sfcs', true);
     $app->run();
-})();
+});
