@@ -2,7 +2,7 @@
 name: New Rule Proposal
 about: Template to use when need vote for a new rule
 title: "[VOTE] Rule description"
-labels: enhancement
+labels: new rule
 assignees: ''
 
 ---
