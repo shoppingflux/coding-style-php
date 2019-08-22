@@ -2,7 +2,6 @@
 <ruleset name="shopping-feed-ruleset">
     <description>Global ruleset</description>
     <exclude-pattern>*/tests/*</exclude-pattern>
-
     <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
     <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
     <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall"/>
@@ -59,6 +58,41 @@
     <rule ref="PEAR.ControlStructures.ControlSignature"/>
     <rule ref="PSR1.Classes.ClassDeclaration"/>
     <rule ref="PSR1.Files.SideEffects"/>
+
+    <!-- function argument declaration -->
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+        <properties>
+            <property name="equalsSpacing" value="1" />
+            <property name="requiredSpacesAfterOpen" value="0" />
+            <property name="requiredSpacesBeforeClose" value="0" />
+        </properties>
+    </rule>
+
+    <!-- enforce space when concat strings -->
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="ignoreNewlines" value="true" />
+        </properties>
+    </rule>
+
+    <!-- Ensure 1 blank line before and after functions, except at the top and bottom. -->
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="spacingBeforeFirst" value="0" />
+            <property name="spacingAfterLast" value="0" />
+        </properties>
+    </rule>
+
+    <!-- Ensure 1 blank lines between member vars, but don't require blank lines before the first. -->
+    <rule ref="Squiz.WhiteSpace.MemberVarSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="spacingBeforeFirst" value="0" />
+        </properties>
+    </rule>
+
     <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops"/>
     <rule ref="Squiz.PHP.Eval"/>
     <rule ref="Squiz.PHP.GlobalKeyword"/>

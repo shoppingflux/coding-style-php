@@ -66,7 +66,7 @@ class PHPCSCommand extends Command
             '--report=full',
             '--colors',
             '--parallel=' . $input->getOption('parallel'),
-            '--ignore=' . $input->getOption('ignore')
+            '--ignore=' . $input->getOption('ignore'),
         ];
 
         array_push($options, ...$input->getArgument('source'));
