@@ -1,0 +1,10 @@
+docs_dir: docs
+site_name: doc/coding-style
+nav:
+  - Home: index.md
+  - Rules: rules.md
+markdown_extensions:
+  - admonition
+  - codehilite
+theme:
+  name: 'material'

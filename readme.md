@@ -1,33 +1,19 @@
-# ShoppingFeed PHP Coding Style
-
-Run CS check and fixer against ShoppingFeed coding standards
+# shoppingfeed/coding-style-php
 
 ### Installation
 
 ```
-composer require shoppingfed/coding-style-php
+composer require shoppingfeed/coding-style-php
 ```
 
-### Usage
+### Documentation
 
-Simply run [phpcs](https://github.com/squizlabs/PHP_CodeSniffer) validation (very verbose mode required to follow progression)
+Documentation is driven by [mkdocs](https://www.mkdocs.org/) and uses [material theme](https://squidfunk.github.io/mkdocs-material/)
 
-```
-vendor/bin/sfcs src --progress -vvv
-```
-
-Alternatively, you can run [phpcbs](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically) which will fix CS errors before validating the source files
+- Find it at [docs/index.md](docs/index.md)
+- Or Run the doc server locally :
 
 ```
-vendor/bin/sfcs src --autofix --progress -vvv
+docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
 ```
 
-### Rules
-
-ShoppingFeed rules file is located at [phpcs/ruleset.xml]
-
-To run validation against a other set of rules, specify the standard
-
-```
-vendor/bin/sfcs src --standard=PSR2
-```
