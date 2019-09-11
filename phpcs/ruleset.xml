@@ -75,16 +75,42 @@
     <rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
     <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+    <rule ref="Squiz.WhiteSpace.MemberVarSpacing">
+        <properties>
+            <property name="spacing" value="1"/>
+            <property name="spacingBeforeFirst" value="0"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacing" value="1"/>
+            <property name="spacingBeforeFirst" value="0"/>
+            <property name="spacingAfterLast" value="0"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1"/>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+        <properties>
+            <property name="equalsSpacing" value="1"/>
+            <property name="requiredSpacesAfterOpen" value="0"/>
+            <property name="requiredSpacesBeforeClose" value="0"/>
+        </properties>
+    </rule>
     <rule ref="Squiz.Arrays.ArrayDeclaration">
-        <include name="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast" />
-        <include name="Squiz.Arrays.ArrayDeclaration.CommaAfterLast" />
-        <include name="Squiz.Arrays.ArrayDeclaration.FirstValueNoNewline" />
-        <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNoNewline" />
-        <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned" />
-        <exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed" />
-        <exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed" />
-        <exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned" />
-        <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned" />
-        <include name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned" />
+        <include name="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"/>
+        <include name="Squiz.Arrays.ArrayDeclaration.CommaAfterLast"/>
+        <include name="Squiz.Arrays.ArrayDeclaration.FirstValueNoNewline"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNoNewline"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/>
+        <include name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned"/>
     </rule>
 </ruleset>
