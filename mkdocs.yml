@@ -2,6 +2,7 @@ docs_dir: docs
 site_name: doc/coding-style
 nav:
   - Home: index.md
+  - Home: style.md
   - Rules: rules.md
 markdown_extensions:
   - admonition

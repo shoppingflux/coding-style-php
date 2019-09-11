@@ -2,3 +2,4 @@ vendor/
 rules
 .idea
 composer.lock
+.DS_Store
