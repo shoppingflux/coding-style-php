@@ -113,4 +113,9 @@
         <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/>
         <include name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned"/>
     </rule>
+
+    <config name="installed_paths" value="../../slevomat/coding-standard"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
+
 </ruleset>
