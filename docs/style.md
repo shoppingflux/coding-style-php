@@ -23,6 +23,6 @@ interface ExampleDomainAccessInterface
     public function fetchOneBy(CriteriaInterface $criteria): ?ReadModel;
     
     // fetch multiple elements (a collection)
-    public function fetchBy(CriteriaInterface $criteria): \Traversable;
+    public function fetchAllBy(CriteriaInterface $criteria): \Traversable;
 }
 ``` 
