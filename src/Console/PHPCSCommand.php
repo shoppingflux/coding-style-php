@@ -57,7 +57,7 @@ class PHPCSCommand extends Command
         );
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         /** @var ProcessHelper $helper */
         $helper  = $this->getHelperSet()->get('process');
