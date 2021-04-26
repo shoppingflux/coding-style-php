@@ -120,6 +120,8 @@
     </rule>
 
     <config name="installed_paths" value="../../slevomat/coding-standard"/>
+    <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment.UselessDocComment"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation"/>
 </ruleset>
