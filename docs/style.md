@@ -85,6 +85,29 @@ $this->object
     ->method4();
 ```
 
+### Method line jump declaration
+
+Do not arbitrary jump lines in method declaration : Only jump lines when max line chars is reached.
+
+##### Correct
+
+```php
+public function handle(ServerRequestInterface $request, ServerHandlerInterface $handler): void
+{
+}
+```
+##### Not correct
+
+```php
+// Max line chars was not reached, we should not jump lines between params
+public function handle(
+    ServerRequestInterface $request,
+    ServerHandlerInterface $handler
+    ): void
+    {
+    }
+```
+
 ### Class naming
 
 If your class use a type, a role or a pattern, you should declare it in the class name.
