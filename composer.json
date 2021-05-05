@@ -1,10 +1,10 @@
 {
     "name": "shoppingfeed/coding-style-php",
     "require": {
-        "squizlabs/php_codesniffer": "^3.5.8",
+        "squizlabs/php_codesniffer": "^3.6.0",
         "symfony/process": "^3.4 | ^4.0 | ^5.0",
         "symfony/console": "^3.4 | ^4.0 | ^5.0",
-        "slevomat/coding-standard": "^6.4"
+        "slevomat/coding-standard": "^7.0"
     },
     "autoload": {
         "psr-4": {
