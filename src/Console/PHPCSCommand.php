@@ -59,6 +59,8 @@ class PHPCSCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        set_time_limit(0);
+
         /** @var ProcessHelper $helper */
         $helper  = $this->getHelperSet()->get('process');
         $options = [
