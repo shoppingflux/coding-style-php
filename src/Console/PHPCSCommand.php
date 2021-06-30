@@ -7,6 +7,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Process\Process;
 
 class PHPCSCommand extends Command
 {
@@ -55,14 +56,22 @@ class PHPCSCommand extends Command
             InputOption::VALUE_NONE,
             'Determine if the code must be fixed before running CS checks'
         );
+        $this->addOption(
+            'timeout',
+            't',
+            InputOption::VALUE_REQUIRED,
+            'Set the phpcs timeout',
+            600
+        );
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        set_time_limit(0);
+        $timeout = (float) $input->getOption('timeout');
 
         /** @var ProcessHelper $helper */
         $helper  = $this->getHelperSet()->get('process');
+
         $options = [
             '--standard=' . $input->getOption('standard'),
             '--report=full',
@@ -80,14 +89,21 @@ class PHPCSCommand extends Command
         if ($input->getOption('autofix')) {
             $command = $options;
             array_unshift($command, 'vendor/bin/phpcbf');
-            $helper->run($output, $command, null, null, OutputInterface::VERBOSITY_NORMAL);
+
+            $process = new Process($command);
+            $process->setTimeout($timeout);
+
+            $helper->run($output, $process, null, null, OutputInterface::VERBOSITY_NORMAL);
         }
 
         array_unshift($options, 'vendor/bin/phpcs');
 
+        $process = new Process($options);
+        $process->setTimeout($timeout);
+
         // forward the process exit code to the current command execution
         return $helper
-            ->run($output, $options, null, null, OutputInterface::VERBOSITY_NORMAL)
+            ->run($output, $process, null, null, OutputInterface::VERBOSITY_NORMAL)
             ->getExitCode();
     }
 }
