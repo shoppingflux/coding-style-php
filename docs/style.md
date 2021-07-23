@@ -183,4 +183,21 @@ interface ExampleDomainAccessInterface
 }
 ``` 
 
+### Passing object by reference
+Objects are always passed by reference. Using '&' to request to pass it by reference can be confusing
+
+```php
+# Valid
+function dataDiff(\DateTime $firstDate, \DateTime $secondDate): \DateInterval
+{
+    return $firstDate->diff($secondDate);
+}
+
+# Invalid
+function dataDiff(\DateTime &$firstDate, \DateTime &$secondDate): \DateInterval
+{
+    return $firstDate->diff($secondDate);
+}
+```
+
 ## Recommendations
