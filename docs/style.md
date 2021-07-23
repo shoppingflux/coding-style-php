@@ -183,6 +183,38 @@ interface ExampleDomainAccessInterface
 }
 ``` 
 
+### Parenthesis
+
+Never use double parenthesis like '((/* something */))'
+
+```php
+# Valid
+$firstCondition = true;
+$secondCondition = false;
+
+// Simple condition
+if ($firstCondition) {
+    // Do something
+}
+
+// Example with Coalescing operator
+trim((string) ($data[0]['address'] ?? ''));
+
+// Adding parenthesis is accepted if there is an operator between operand
+if (($firstCondition) && ($secondCondition)) {
+    // Do something
+}
+
+# Invalid
+// Simple condition
+if (($firstCondition)) {
+    // Do something
+}
+
+// Example with Coalescing operator
+trim(($data[0]['address'] ?? null));
+```
+
 ### Passing object by reference
 Objects are always passed by reference. Using '&' to request to pass it by reference can be confusing
 
