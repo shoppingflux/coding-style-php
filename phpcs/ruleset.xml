@@ -59,8 +59,11 @@
     <rule ref="MySource.PHP.GetRequestData"/>
     <rule ref="PEAR.Commenting.InlineComment"/>
     <rule ref="PEAR.ControlStructures.ControlSignature"/>
+    <rule ref="PEAR.NamingConventions.ValidClassName"/>
     <rule ref="PSR1.Classes.ClassDeclaration"/>
     <rule ref="PSR1.Files.SideEffects"/>
+    <rule ref="PSR2.Classes.ClassDeclaration"/>
+    <rule ref="PSR12"/>
     <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
     <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops"/>
     <rule ref="Squiz.PHP.Eval"/>
@@ -119,11 +122,10 @@
         <exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"/>
     </rule>
 
-    <rule ref="PEAR.NamingConventions.ValidClassName"/>
-    <rule ref="PSR2.Classes.ClassDeclaration"/>
-
     <config name="installed_paths" value="../../slevomat/coding-standard"/>
     <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment.UselessDocComment"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation"/>
