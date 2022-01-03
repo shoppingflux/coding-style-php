@@ -57,6 +57,12 @@ class PHPCSCommand extends Command
             'Determine if the code must be fixed before running CS checks'
         );
         $this->addOption(
+            'exclude',
+            null,
+            InputOption::VALUE_REQUIRED,
+            'A comma separated list of sniff codes to exclude from checking'
+        );
+        $this->addOption(
             'timeout',
             't',
             InputOption::VALUE_REQUIRED,
@@ -81,6 +87,10 @@ class PHPCSCommand extends Command
         ];
 
         array_push($options, ...$input->getArgument('source'));
+
+        if ($input->getOption('exclude')) {
+            $options[] = '--exclude=' . $input->getOption('exclude');
+        }
 
         if ($input->getOption('progress')) {
             $options[] = '-p';
