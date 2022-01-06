@@ -20,7 +20,7 @@ class PHPCSCommand extends Command
         );
         $this->addArgument(
             'source',
-            InputArgument::REQUIRED | InputArgument::IS_ARRAY,
+            InputArgument::OPTIONAL | InputArgument::IS_ARRAY,
             'The source(s) folder(s) to analyse, multiples values allowed'
         );
         $this->addOption(
@@ -69,7 +69,9 @@ class PHPCSCommand extends Command
             '--ignore=' . $input->getOption('ignore'),
         ];
 
-        array_push($options, ...$input->getArgument('source'));
+        if ($source = $input->getArgument('source')) {
+            array_push($options, ...$source);
+        }
 
         if ($input->getOption('progress')) {
             $options[] = '-p';
