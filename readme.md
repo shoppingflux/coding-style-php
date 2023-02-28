@@ -6,6 +6,18 @@
 composer require shoppingfeed/coding-style-php
 ```
 
+### Contributing
+
+To connect to a php 8.0 container correctly configured
+
+- Create a container : `docker run --name coding-style-php -v $PWD:/var/www -d ghcr.io/shoppingflux/php:8.0.2-fpm`
+- Connect to container : `docker exec -it coding-style-php bash`
+
+Once connected to the container you can :
+
+- Update composer dependencies : `composer update`
+- Run test : `composer test`
+
 ### Documentation
 
 Documentation is driven by [mkdocs](https://www.mkdocs.org/) and uses [material theme](https://squidfunk.github.io/mkdocs-material/)
