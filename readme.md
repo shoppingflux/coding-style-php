@@ -18,6 +18,10 @@ Once connected to the container you can :
 - Update composer dependencies : `composer update`
 - Run test : `composer test`
 
+### Proposal process
+
+See [proposal](docs/index.md#proposal)
+
 ### Documentation
 
 Documentation is driven by [mkdocs](https://www.mkdocs.org/) and uses [material theme](https://squidfunk.github.io/mkdocs-material/)

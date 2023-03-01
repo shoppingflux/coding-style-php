@@ -2,6 +2,13 @@
 
 Run CS check and fixer against ShoppingFeed coding standards
 
+### Proposal
+
+Anyone is welcome to propose new rules. To do so, create a `new_rule` issue on
+github : https://github.com/shoppingflux/coding-style-php/issues.
+Fill issue template and require Vote from every developers. If the proposition
+get the majoriry, it can be added to existing rules.
+
 ### Installation
 
 ```
