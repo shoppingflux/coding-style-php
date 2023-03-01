@@ -126,13 +126,15 @@
     <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment.UselessDocComment"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing">
         <properties>
-            <property name="controlStructures[]" value="if"/>
-            <property name="controlStructures[]" value="do"/>
-            <property name="controlStructures[]" value="while"/>
-            <property name="controlStructures[]" value="for"/>
-            <property name="controlStructures[]" value="foreach"/>
-            <property name="controlStructures[]" value="switch"/>
-            <property name="controlStructures[]" value="try"/>
+            <property name="controlStructures" type="array">
+                <element value="if"/>
+                <element value="do"/>
+                <element value="while"/>
+                <element value="for"/>
+                <element value="foreach"/>
+                <element value="switch"/>
+                <element value="try"/>
+            </property>
         </properties>
     </rule>
     <rule ref="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing"/>
