@@ -50,6 +50,7 @@
                 <element key="delete" value="unset"/>
                 <element key="print_r" value="return"/>
                 <element key="eval" value="none"/>
+                <element key="is_null" value="none"/>
             </property>
         </properties>
     </rule>
