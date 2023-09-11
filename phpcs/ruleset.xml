@@ -49,8 +49,8 @@
                 <element key="sizeof" value="count"/>
                 <element key="delete" value="unset"/>
                 <element key="print_r" value="return"/>
-                <element key="eval" value="none"/>
-                <element key="is_null" value="none"/>
+                <element key="eval" value="null"/>
+                <element key="is_null" value="null"/>
             </property>
         </properties>
     </rule>
@@ -123,6 +123,7 @@
     </rule>
 
     <config name="installed_paths" value="../../slevomat/coding-standard"/>
+    <rule ref="SlevomatCodingStandard.Arrays.SingleLineArrayWhitespace"/>
     <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment.MultiLinePropertyComment"/>
     <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment.UselessDocComment"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing">
@@ -139,6 +140,8 @@
         </properties>
     </rule>
     <rule ref="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing"/>
+    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall" />
+    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration"/>
     <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
     <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
