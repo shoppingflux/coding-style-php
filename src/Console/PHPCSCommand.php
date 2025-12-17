@@ -57,6 +57,12 @@ class PHPCSCommand extends Command
             'Determine if the code must be fixed before running CS checks'
         );
         $this->addOption(
+            'fix-only',
+            null,
+            InputOption::VALUE_NONE,
+            'Determine if the code must be checked after being fixed'
+        );
+        $this->addOption(
             'exclude',
             null,
             InputOption::VALUE_REQUIRED,
@@ -105,7 +111,11 @@ class PHPCSCommand extends Command
             $process = new Process($command);
             $process->setTimeout($timeout);
 
-            $helper->run($output, $process, null, null, OutputInterface::VERBOSITY_NORMAL);
+            $process = $helper->run($output, $process, null, null, OutputInterface::VERBOSITY_NORMAL);
+
+            if ($input->getOption('fix-only')) {
+                return $process->getExitCode();
+            }
         }
 
         array_unshift($options, 'vendor/bin/phpcs');
