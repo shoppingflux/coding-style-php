@@ -85,6 +85,7 @@ class PHPCSCommand extends Command
         $helper  = $this->getHelperSet()->get('process');
 
         $options = [
+            '-s',
             '--standard=' . $input->getOption('standard'),
             '--report=full',
             '--colors',
