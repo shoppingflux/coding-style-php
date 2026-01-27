@@ -112,10 +112,12 @@ class PHPCSCommand extends Command
             $process = new Process($command);
             $process->setTimeout($timeout);
 
-            $process = $helper->run($output, $process, null, null, OutputInterface::VERBOSITY_NORMAL);
+            $helper->run($output, $process, null, null, OutputInterface::VERBOSITY_NORMAL);
 
+            // The fix-only option is used in automatic code fixer GitHub workflow.
+            // In that case, always return success so the next workflow step runs and any fixes can be committed.
             if ($input->getOption('fix-only')) {
-                return $process->getExitCode();
+                return self::SUCCESS;
             }
         }
 
