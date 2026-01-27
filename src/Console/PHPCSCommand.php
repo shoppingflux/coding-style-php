@@ -114,7 +114,7 @@ class PHPCSCommand extends Command
 
             $helper->run($output, $process, null, null, OutputInterface::VERBOSITY_NORMAL);
 
-            // We always return success if fix-only to avoid to rerun phpcs after fixing
+            // We always return success to avoid to rerun phpcs after fixing
             if ($input->getOption('fix-only')) {
                 return self::SUCCESS;
             }
