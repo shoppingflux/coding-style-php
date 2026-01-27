@@ -112,10 +112,11 @@ class PHPCSCommand extends Command
             $process = new Process($command);
             $process->setTimeout($timeout);
 
-            $process = $helper->run($output, $process, null, null, OutputInterface::VERBOSITY_NORMAL);
+            $helper->run($output, $process, null, null, OutputInterface::VERBOSITY_NORMAL);
 
+            // We always return success if fix-only to avoid to rerun phpcs after fixing
             if ($input->getOption('fix-only')) {
-                return $process->getExitCode();
+                return self::SUCCESS;
             }
         }
 
