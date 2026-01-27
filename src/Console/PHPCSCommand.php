@@ -114,7 +114,8 @@ class PHPCSCommand extends Command
 
             $helper->run($output, $process, null, null, OutputInterface::VERBOSITY_NORMAL);
 
-            // We always return success to avoid to rerun phpcs after fixing
+            // The fix-only option is used in automatic code fixer GitHub workflow.
+            // In that case, always return success so the next workflow step runs and any fixes can be committed.
             if ($input->getOption('fix-only')) {
                 return self::SUCCESS;
             }
