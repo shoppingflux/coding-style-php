@@ -1,5 +1,6 @@
 {
     "name": "shoppingfeed/coding-style-php",
+    "type": "phpcodesniffer-standard",
     "require": {
         "php": ">=8.0",
         "squizlabs/php_codesniffer": "^3.6.0",
